@@ -3,11 +3,12 @@ package com.online.topcoder;
 import java.util.Arrays;
 
 /**
- * Author: Utsav Sinha of House Sinha. First of his name. King In The East.
- * Reviewed By:
- * Project: Topcoder
+ * Author: Utsav Sinha
+ * Online Forum (Problem Code if any): TopCoder
+ * Difficulty Level:
+ * Status:
+ * Description:
  * Created On : 7/16/18
- * Organisation: CustomerXPs Software Private Limited
  */
 public class Aaagmnrs {
 

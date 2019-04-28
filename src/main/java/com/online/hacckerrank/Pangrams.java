@@ -11,6 +11,14 @@ import java.util.Scanner;
  * Created On : 4/15/17
  * Organisation: CustomerXPs Software Private Limited
  */
+/**
+ * Author: Utsav Sinha
+ * Online Forum (Problem Code if any): HackerRank
+ * Difficulty Level:
+ * Status:
+ * Description:
+ * Created On : 4/15/17
+ */
 public class Pangrams {
 
     public static void main(String[] args) {

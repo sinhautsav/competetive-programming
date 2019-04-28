@@ -3,12 +3,12 @@ package com.online.codechef;
 import java.util.Scanner;
 
 /**
- * Group : CodeChef
- * Problem Code : RGAME
- * Submission :
  * Author: Utsav Sinha
+ * Online Forum (Problem Code if any): CodeChef(RGAME)
+ * Difficulty Level:
+ * Status:
+ * Description:
  * Created On : 4/22/17
- * Organisation: CustomerXPs Software Private Limited
  */
 public class RupsaGame {
     final static int MODULO = 1000000007;

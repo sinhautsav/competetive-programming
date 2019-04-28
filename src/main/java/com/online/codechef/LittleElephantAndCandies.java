@@ -3,11 +3,12 @@ package com.online.codechef;
 import java.util.Scanner;
 
 /**
- * Author: Utsav Sinha of House Sinha. First of his name. King In The East.
- * Reviewed By:
- * Project:
+ * Author: Utsav Sinha
+ * Online Forum (Problem Code if any): CodeChef
+ * Difficulty Level:
+ * Status:
+ * Description:
  * Created On : 6/12/18
- * Organisation: CustomerXPs Software Private Limited
  */
 public class LittleElephantAndCandies {
 

@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Group : CodeChef
- * Problem Code : SIMDISH
- * Submission : Successful
  * Author: Utsav Sinha
+ * Online Forum (Problem Code if any): CodeChef(SIMDISH)
+ * Difficulty Level:
+ * Status: SUCCESS
+ * Description:
  * Created On : 4/22/17
- * Organisation: CustomerXPs Software Private Limited
  */
 public class SimDishes {
     public static void main(String[] args) {

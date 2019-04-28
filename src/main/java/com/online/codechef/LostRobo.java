@@ -3,13 +3,12 @@ package com.online.codechef;
 import java.util.Scanner;
 
 /**
- * Group : CodeChef
- * Problem Code : ICPC16A
- * Submission:
  * Author: Utsav Sinha
- * Reviewed By:
+ * Online Forum (Problem Code if any): CodeChef(ICPC16A)
+ * Difficulty Level:
+ * Status:
+ * Description:
  * Created On : 4/15/17
- * Organisation: CustomerXPs Software Private Limited
  */
 class LostRobo {
 

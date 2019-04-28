@@ -3,13 +3,12 @@ package com.online.codechef;
 import java.util.Scanner;
 
 /**
- * Group : CodeChef
- * Problem Code : CHNO8
- * Submission : Successful
  * Author: Utsav Sinha
- * Reviewed By:
+ * Online Forum (Problem Code if any): CodeChef(CHNO8)
+ * Difficulty Level:
+ * Status: SUCCESS
+ * Description:
  * Created On : 4/14/17
- * Organisation: CustomerXPs Software Private Limited
  */
 public class CrazyFibo {
 

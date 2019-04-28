@@ -3,13 +3,12 @@ package com.online.codechef;
 import java.util.Scanner;
 
 /**
- * Group : CodeChef
- * Problem Code : ICPC16B
- * Submission: Failed
  * Author: Utsav Sinha
- * Reviewed By:
+ * Online Forum (Problem Code if any): CodeChef(ICPC16B)
+ * Difficulty Level:
+ * Status: FAIL
+ * Description:
  * Created On : 4/15/17
- * Organisation: CustomerXPs Software Private Limited
  */
 public class BeautifulArray {
     public static void main(String[] args) {
