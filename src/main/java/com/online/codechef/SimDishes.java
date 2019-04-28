@@ -1,4 +1,4 @@
-package online.codechef;
+package com.online.codechef;
 
 import java.util.ArrayList;
 import java.util.List;

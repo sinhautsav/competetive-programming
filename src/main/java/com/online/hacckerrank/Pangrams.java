@@ -1,4 +1,4 @@
-package online.hacckerrank;
+package com.online.hacckerrank;
 
 import java.util.Scanner;
 

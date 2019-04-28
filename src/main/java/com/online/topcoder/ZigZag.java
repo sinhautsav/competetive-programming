@@ -1,4 +1,4 @@
-package online.topcoder;
+package com.online.topcoder;
 
 /**
  * Author: Utsav Sinha of House Sinha. First of his name. King In The East.
