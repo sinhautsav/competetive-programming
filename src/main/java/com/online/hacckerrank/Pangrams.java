@@ -3,19 +3,10 @@ package com.online.hacckerrank;
 import java.util.Scanner;
 
 /**
- * Group: HackerRank
- * Problem Code :
- * Submission: Success
- * Author: Utsav Sinha
- * Reviewed By:
- * Created On : 4/15/17
- * Organisation: CustomerXPs Software Private Limited
- */
-/**
  * Author: Utsav Sinha
  * Online Forum (Problem Code if any): HackerRank
  * Difficulty Level:
- * Status:
+ * Status: Success
  * Description:
  * Created On : 4/15/17
  */
