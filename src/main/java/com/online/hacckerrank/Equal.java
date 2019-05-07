@@ -38,49 +38,61 @@ public class Equal {
         while(true) {
             int max = max(arr);
             int closest = closest(arr, max);
+            int maxCount = 0;
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i] != max) arr[i] = arr[i] + closest;
+                if(arr[i] == max) maxCount++;
+                if (arr[i] != max || maxCount > 1) {
+                    arr[i] = arr[i] + closest;
+                }
             }
             steps++;
+            System.out.println(Arrays.toString(arr));
             int allElements = 0;
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] == max) allElements++;
             }
-            if (allElements == arr.length) break;
+            if (allElements == arr.length) {
+                break;
+            }
         }
         return steps;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+//    private static final Scanner scanner = new Scanner(System.in);
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+//
+//        int t = scanner.nextInt();
+//        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//
+//        for (int tItr = 0; tItr < t; tItr++) {
+//            int n = scanner.nextInt();
+//            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//
+//            int[] arr = new int[n];
+//
+//            String[] arrItems = scanner.nextLine().split(" ");
+//            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//
+//            for (int i = 0; i < n; i++) {
+//                int arrItem = Integer.parseInt(arrItems[i]);
+//                arr[i] = arrItem;
+//            }
+//
+//            int result = equal(arr);
+//
+//            bufferedWriter.write(String.valueOf(result));
+//            bufferedWriter.newLine();
+//        }
+//
+//        bufferedWriter.close();
+//
+//        scanner.close();
+//    }
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        int t = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int tItr = 0; tItr < t; tItr++) {
-            int n = scanner.nextInt();
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-            int[] arr = new int[n];
-
-            String[] arrItems = scanner.nextLine().split(" ");
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-            for (int i = 0; i < n; i++) {
-                int arrItem = Integer.parseInt(arrItems[i]);
-                arr[i] = arrItem;
-            }
-
-            int result = equal(arr);
-
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
-        }
-
-        bufferedWriter.close();
-
-        scanner.close();
+    public static void main(String[] args) {
+        int arr[] = new int[]{2,5,5,5,5,5};
+        System.out.println(equal(arr));
     }
 }
