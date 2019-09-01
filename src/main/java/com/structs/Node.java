@@ -1,4 +1,4 @@
-package com.ds.trees;
+package com.structs;
 
 /**
  * Author: Utsav Sinha
@@ -8,19 +8,19 @@ package com.ds.trees;
  * Description:
  * Created On : 26/08/19
  */
-public class TreeNode<T extends Comparable<T>> {
+public class Node<T extends Comparable<T>> {
 
     private T value;
-    private TreeNode<T> leftNode;
-    private TreeNode<T> rightNode;
+    private Node<T> leftNode;
+    private Node<T> rightNode;
 
-    public TreeNode(T value, TreeNode<T> leftNode, TreeNode<T> rightNode) {
+    public Node(T value, Node<T> leftNode, Node<T> rightNode) {
         this.value = value;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
     }
 
-    public TreeNode(T value) {
+    public Node(T value) {
         this.value = value;
     }
 
@@ -28,11 +28,11 @@ public class TreeNode<T extends Comparable<T>> {
         this.value = value;
     }
 
-    public void setLeftNode(TreeNode<T> leftNode) {
+    public void setLeftNode(Node<T> leftNode) {
         this.leftNode = leftNode;
     }
 
-    public void setRightNode(TreeNode<T> rightNode) {
+    public void setRightNode(Node<T> rightNode) {
         this.rightNode = rightNode;
     }
 
@@ -40,11 +40,11 @@ public class TreeNode<T extends Comparable<T>> {
         return value;
     }
 
-    public TreeNode<T> getLeftNode() {
+    public Node<T> getLeftNode() {
         return leftNode;
     }
 
-    public TreeNode<T> getRightNode() {
+    public Node<T> getRightNode() {
         return rightNode;
     }
 }
