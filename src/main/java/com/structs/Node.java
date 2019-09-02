@@ -8,17 +8,11 @@ package com.structs;
  * Description:
  * Created On : 26/08/19
  */
-public class Node<T extends Comparable<T>> {
+public class Node<T> {
 
     private T value;
     private Node<T> leftNode;
     private Node<T> rightNode;
-
-    public Node(T value, Node<T> leftNode, Node<T> rightNode) {
-        this.value = value;
-        this.leftNode = leftNode;
-        this.rightNode = rightNode;
-    }
 
     public Node(T value) {
         this.value = value;

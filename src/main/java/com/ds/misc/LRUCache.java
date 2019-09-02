@@ -1,9 +1,10 @@
 package com.ds.misc;
 
+import com.ds.list.DoubleLinkedList;
 import com.structs.Node;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -22,27 +23,34 @@ import java.util.Map;
  * 2. When #1 is done , remove count variable.
  */
 
-public class LRUCache<E extends Comparable<E>> {
-    private Map<Integer ,E> cache;
-    private LinkedList<E> twoWayList;
+public class LRUCache<E extends UniquelyIdentifiable<T>, T> {
+    private Map<T , E> cache;
+    private DoubleLinkedList<E> twoWayList;
     private int cacheSize;
     int count;
 
     public LRUCache(int cacheSize) {
-        int count = 0;
         this.cacheSize = cacheSize;
-        this.cache = new HashMap<>();
-        this.twoWayList = new LinkedList<>();
+        this.cache = new HashMap<T, E>();
+        this.twoWayList = new DoubleLinkedList<>();
     }
 
-    public void addElement(E element) {
-        if(this.twoWayList.size() < this.cacheSize) {
-            this.cache.put(count++, element);
-            this.twoWayList.addFirst(element);
-        } else {
+    public boolean addElement(E element) {
+        if(this.cache.containsKey(element.getId())) {
+            if (this.twoWayList.getSize() < this.cacheSize) {
+                this.cache.put(element.getId(), element);
+                this.twoWayList.addFirst(element);
+            } else {
 
+            }
         }
+        return false;
     }
 
-
+    public E get(T key){
+        E node;
+        if ((node = this.cache.get(key)) != null) {
+        }
+        return null;
+    }
 }
