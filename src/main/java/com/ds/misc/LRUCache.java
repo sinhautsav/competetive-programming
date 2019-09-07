@@ -17,15 +17,13 @@ import java.util.Optional;
 
 /**
  * TODO
- * 1. Make it generic for a node to have uniquely identifiable id for map as a key. It will an integer for now.
- * 2. When #1 is done , remove count variable.
+ * Make it thread safe
  */
 
-public class LRUCache<E extends UniquelyIdentifiable<T>, T> {
+public class LRUCache<T, E extends UniquelyIdentifiable<T>> {
     private Map<T , Node<E>> cache;
     private int cacheSize;
-    Node<E> head, tail;
-    int count;
+    private Node<E> head, tail;
 
     public LRUCache(int cacheSize) {
         this.cacheSize = cacheSize;
@@ -38,17 +36,19 @@ public class LRUCache<E extends UniquelyIdentifiable<T>, T> {
         Node<E> node = new Node<>(element);
         if(mapSize == this.cacheSize){
             //remove the last node
+            T key = tail.getValue().getId();
             Node<E> tailLeft = tail.getLeftNode();
             tailLeft.removeRight();
             tail = tailLeft;
 
+            this.addInFirst(node);
+            this.cache.remove(key);
         } else if(mapSize < this.cacheSize){
             if(mapSize == 0){
                 head = node;
                 tail = node;
-            }
+            } else this.addInFirst(node);
         }
-        this.addInFirst(node);
         this.cache.put(element.getId(), node);
 
         return true;
