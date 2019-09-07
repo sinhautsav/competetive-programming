@@ -1,12 +1,10 @@
 package com.ds.misc;
 
-import com.ds.list.DoubleLinkedList;
 import com.structs.Node;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Author: Utsav Sinha
@@ -24,33 +22,49 @@ import java.util.Map;
  */
 
 public class LRUCache<E extends UniquelyIdentifiable<T>, T> {
-    private Map<T , E> cache;
-    private DoubleLinkedList<E> twoWayList;
+    private Map<T , Node<E>> cache;
     private int cacheSize;
+    Node<E> head, tail;
     int count;
 
     public LRUCache(int cacheSize) {
         this.cacheSize = cacheSize;
-        this.cache = new HashMap<T, E>();
-        this.twoWayList = new DoubleLinkedList<>();
+        this.cache = new HashMap<>();
     }
 
-    public boolean addElement(E element) {
-        if(this.cache.containsKey(element.getId())) {
-            if (this.twoWayList.getSize() < this.cacheSize) {
-                this.cache.put(element.getId(), element);
-                this.twoWayList.addFirst(element);
-            } else {
+    public boolean add(E element) {
+        if(this.cache.get(element.getId()) != null) return false;
+        int mapSize = this.cache.size();
+        Node<E> node = new Node<>(element);
+        if(mapSize == this.cacheSize){
+            //remove the last node
+            Node<E> tailLeft = tail.getLeftNode();
+            tailLeft.removeRight();
+            tail = tailLeft;
 
+        } else if(mapSize < this.cacheSize){
+            if(mapSize == 0){
+                head = node;
+                tail = node;
             }
         }
-        return false;
+        this.addInFirst(node);
+        this.cache.put(element.getId(), node);
+
+        return true;
     }
 
-    public E get(T key){
-        E node;
-        if ((node = this.cache.get(key)) != null) {
-        }
-        return null;
+    public Optional<E> get(T key){
+        Node<E> node;
+        if ((node = this.cache.get(key)) == null) return Optional.empty();
+        node.detach();
+        this.addInFirst(node);
+        return Optional.of(node.getValue());
+    }
+
+    private void addInFirst(Node<E> node) {
+        head.setLeftNode(node);
+        node.setRightNode(head);
+        head = node;
     }
 }

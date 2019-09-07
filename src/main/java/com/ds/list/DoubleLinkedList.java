@@ -63,6 +63,14 @@ public class DoubleLinkedList<E> implements Iterable<E> {
         head = newEle;
     }
 
+    public void moveFirst(E element) {
+        Node<E> newEle = new Node<E>(element);
+        assert head.getLeftNode() == null;
+        head.setLeftNode(newEle);
+        newEle.setRightNode(head);
+        head = newEle;
+    }
+
     @Override
     public Iterator<E> iterator() {
         return null;
