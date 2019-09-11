@@ -49,7 +49,8 @@ public class Tree<T extends Comparable<T>> {
         }
     }
 
-    public void recursiveTraversal(DFSType type) {
+    @Recursive
+    private void traverse(DFSType type) {
         StringBuilder builder = new StringBuilder(type.name()).append(": ");
         switch (type){
             case IN_ORDER: printInOrderRecursive(this.root, builder); break;
@@ -111,8 +112,8 @@ public class Tree<T extends Comparable<T>> {
         Tree tree = new Tree<>(arr);
         tree.createTree();
         tree.levelOrderTraversal();
-        tree.recursiveTraversal(DFSType.IN_ORDER);
-        tree.recursiveTraversal(DFSType.PRE_ORDER);
-        tree.recursiveTraversal(DFSType.POST_ORDER);
+        tree.traverse(DFSType.IN_ORDER);
+        tree.traverse(DFSType.PRE_ORDER);
+        tree.traverse(DFSType.POST_ORDER);
     }
 }
