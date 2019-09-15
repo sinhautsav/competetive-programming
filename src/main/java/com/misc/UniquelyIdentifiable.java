@@ -1,4 +1,4 @@
-package com.ds.misc;
+package com.misc;
 
 public interface UniquelyIdentifiable<T> {
     T getId();

@@ -1,4 +1,4 @@
-package com.ds.misc;
+package com.misc;
 
 import com.structs.Node;
 
