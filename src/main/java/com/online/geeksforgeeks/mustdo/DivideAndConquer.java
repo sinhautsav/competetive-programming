@@ -15,6 +15,8 @@ import java.io.InputStreamReader;
 public class DivideAndConquer {
 
     public static void main(String[] args) throws IOException {
+        System.out.println(findKthElement(new int[]{2, 3, 6, 7, 9}, new int[]{10, 11, 14, 15}, 5));
+        System.out.println(findKthElement(new int[]{2, 3, 6, 7, 9}, new int[]{1, 4, 8, 10}, 5));
         elementThatAppearsOnceInSortedArray();
     }
 
@@ -42,11 +44,11 @@ public class DivideAndConquer {
         int start = 0, end = array.length - 1, mid = 0;
         while (start != end) {
             mid = (start + end) / 2;
-            if((mid & 1) == 0){
-                if(array[mid] == array[mid + 1]) start = mid + 2;
+            if ((mid & 1) == 0) {
+                if (array[mid] == array[mid + 1]) start = mid + 2;
                 else end = mid;
             } else {
-                if(array[mid] == array[mid - 1]) start = mid + 1;
+                if (array[mid] == array[mid - 1]) start = mid + 1;
                 else end = mid - 1;
             }
         }
@@ -81,16 +83,20 @@ public class DivideAndConquer {
     }
 
     private static int findKthElement(int[] arrOne, int[] arrTwo, int k) {
-        if(arrOne[arrOne.length - 1] <= arrTwo [0]) return arrTwo[k];
-        if(arrTwo[arrTwo.length - 1] <= arrOne [0]) return arrOne[k];
         int i = 0;
-        while(i != k) {
-            while(i < arrOne.length && arrOne[i] < arrTwo[i]){
+        int one = arrOne[i];
+        int two = arrOne[i];
+        while (i != k) {
+            while (i < arrOne.length -1  && one <= two) {
                 i++;
+                one = arrOne[i];
             }
-            while(i < arrTwo.length && arrTwo[i] < arrOne[i]){
+            if (i == k) break;
+            while (i < arrTwo.length - 1 && two <= one) {
                 i++;
+                two = arrTwo[i];
             }
+            if (i == k) break;
         }
         return (Math.min(arrOne[i], arrTwo[i]));
     }
